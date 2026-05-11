@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>LUCKYBEAR — Войди и выиграй</title>
+<link rel="icon" href="lbLogo.png" type="image">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0a0a12;--surface:rgba(255,255,255,.03);--accent:#00f5d4;--accent2:#7b61ff;--accent3:#ff6b6b;--text:#fff;--text-dim:rgba(255,255,255,.6)}body{font-family:'Unbounded',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;min-height:100dvh;overflow-x:hidden}.bg-gradient{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 50% at 20% -20%,rgba(123,97,255,.25),transparent) , radial-gradient(ellipse 60% 40% at 80% 10%,rgba(0,245,212,.2),transparent) , radial-gradient(ellipse 50% 30% at 50% 100%,rgba(255,107,107,.15),transparent);animation:bgPulse 8s ease-in-out infinite alternate}@keyframes bgPulse{ 0%{opacity:0.8;filter:hue-rotate(0deg)} 100%{opacity:1;filter:hue-rotate(15deg)} }.container{position:relative;z-index:1;max-width:600px;margin:0 auto;padding:24px 20px 60px;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}.logo-section{text-align:center;padding:30px 0 20px}.logo{width:200px;height:140px;margin:0 auto 16px;position:relative;display:flex;align-items:center;justify-content:center}.logo img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 0 30px rgba(0,245,212,.5));transform:scale(1)}.logo-circle img{border-radius:50%;border:3px solid rgba(255,255,255,.2)}.logo-rounded img{border-radius:20px;border:3px solid rgba(255,255,255,.2)}.logo-none img{border-radius:0;border:none}.brand-name{font-size:clamp(28px,7vw,42px);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#00f5d4,#7b61ff,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.tagline{margin-top:8px;font-size:14px;color:rgba(255,255,255,.6);letter-spacing:2px;text-transform:uppercase}.vpn-notice{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:rgba(255,255,255,.03);border-radius:14px;border:1px solid rgba(255,255,255,.06);font-size:12px;color:var(--text-dim)}.buttons-section{padding:30px 0;display:flex;flex-direction:column;gap:16px}.btn{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;padding:20px 28px;border-radius:20px;font-size:16px;font-weight:700;text-decoration:none;color:var(--text);border:none;cursor:pointer;overflow:hidden;transition:transform .35s ease , box-shadow .35s ease , border-color .35s ease , background .35s ease;-webkit-tap-highlight-color:transparent;transform-origin:center;will-change:transform}.btn span,.btn svg{position:relative;z-index:1}.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 40px rgba(0,245,212,.3)}.btn-secondary{background:linear-gradient(135deg,var(--accent2),var(--accent3));box-shadow:0 10px 40px rgba(123,97,255,.3)}.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.15);box-shadow:0 4px 20px rgba(0,0,0,.2)}.btn-custom{color:var(--text)}.btn-outline-custom{background:transparent;border:2px solid;box-shadow:0 4px 20px rgba(0,0,0,.2)}.btn-primary:hover,.btn-secondary:hover,.btn-outline:hover,.btn-custom:hover,.btn-outline-custom:hover{transform:translateY(-4px) scale(1.02)}.btn-primary:active,.btn-secondary:active,.btn-outline:active,.btn-custom:active,.btn-outline-custom:active{transform:translateY(-2px) scale(.98)}.btn-icon{width:24px;height:24px;flex-shrink:0}.games-section{margin-top:auto;padding-top:40px}.section-title{font-size:18px;font-weight:700;margin-bottom:20px;text-align:center;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase}.games-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}.game-card{width:calc(50% - 8px);max-width:220px;min-width:140px;position:relative;background:var(--surface);border-radius:20px;border:1px solid rgba(255,255,255,.06);overflow:hidden;transition:transform .35s ease , box-shadow .35s ease;text-decoration:none;display:block}.game-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 60px rgba(0,0,0,.4)}.game-card:active{transform:translateY(-4px) scale(.98)}.game-badge{position:absolute;top:12px;right:12px;padding:6px 12px;background:linear-gradient(135deg,var(--accent3),#ff8e53);border-radius:20px;font-size:10px;font-weight:800;letter-spacing:1px;z-index:2}.game-image{width:100%;aspect-ratio:1;object-fit:cover;display:block}.game-title{padding:16px;font-size:13px;font-weight:700;text-align:center;background:rgba(0,0,0,.3)}.footer{margin-top:40px;padding:20px 0;text-align:center;font-size:11px;color:rgba(255,255,255,.3);border-top:1px solid rgba(255,255,255,.05)}@media (max-width:480px){.container{padding:16px 16px 40px}.logo{width:170px;height:120px}.btn{padding:18px 24px;font-size:15px;border-radius:18px}.games-grid{gap:12px}.game-card{width:calc(50% - 6px);min-width:120px}.game-title{padding:12px;font-size:12px}}@supports(padding: max(0px)){ .container{ padding-top:max(24px,env(safe-area-inset-top)); padding-bottom:max(60px,env(safe-area-inset-bottom)); padding-left:max(20px,env(safe-area-inset-left)); padding-right:max(20px,env(safe-area-inset-right)); } }
+</style>
+</head>
+<body>
+<div class="bg-gradient"></div>
+
+<div class="container">
+  <header class="logo-section">
+    <div class="logo logo-none">
+      <img src="lbLogo.png" alt="LUCKYBEAR">
+    </div>
+    <h1 class="brand-name">LUCKYBEAR</h1>
+    <p class="tagline">Войди и выиграй</p>
+  </header>
+
+  <div class="vpn-notice">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    <span>Сайт может требовать VPN в некоторых регионах</span>
+  </div>
+
+  <nav class="buttons-section">
+    <a href="https://lbgame777.xyz/12XGdy" class="btn btn-custom" data-btn="site" style="background:#7b61ff;box-shadow:0 10px 40px #7b61ff40;"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg><span>ПЕРЕЙТИ НА САЙТ</span></a>
+    <a href="https://t.me/+l6ZMtcXv8h4wNzg6" class="btn btn-custom" data-btn="bot" style="background:#00f5d4;box-shadow:0 10px 40px #00f5d440;"><svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.74 3.99-1.74 6.65-2.89 7.99-3.45 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg><span>ОТКРЫТЬ БОТА</span></a>
+    <a href="https://t.me/+l6ZMtcXv8h4wNzg6" class="btn btn-outline-custom" data-btn="tg" style="border-color:#ff6b9d;color:#ff6b9d;"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>TELEGRAM КАНАЛ</span></a>
+  </nav>
+
+  <section class="games-section" id="gamesSection">
+    <h2 class="section-title">Популярные игры</h2>
+    <div class="games-grid" id="gamesGrid">
+      <a href="https://t.me/+l6ZMtcXv8h4wNzg6" class="game-card" data-game="2">
+        <span class="game-badge">HOT</span>
+        <img src="logoMineslot.png" alt="MINE SLOT" class="game-image">
+        <div class="game-title" style="color:#4a9eff">MINE SLOT</div>
+      </a>
+      <a href="https://t.me/+l6ZMtcXv8h4wNzg6" class="game-card" data-game="5">
+        <span class="game-badge">HOT</span>
+        <img src="logoJumper.webp" alt="JUMPER" class="game-image">
+        <div class="game-title" style="color:#4a9eff">JUMPER</div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 LuckyBear — Все права защищены
+  </footer>
+</div>
+
+</body>
+</html>
