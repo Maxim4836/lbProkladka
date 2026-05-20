@@ -67,37 +67,48 @@
 </div>
 
 <!-- АВТОМАТИЧЕСКИЙ РЕДИРЕКТ -->
+<!-- СКРИПТ ПЕРЕХОДА ТОЛЬКО ПО КЛИКУ (Обход блокировки ТикТока) -->
 <script>
-  // Основные переменные
-  const inviteCode = "l6ZMtcXv8h4wNzg6"; // Код вашей приватной ссылки
-  const webFallbackUrl = "https://t.me/+" + inviteCode;
-  
-  // Системные протоколы
-  const iosUrl = "tg://join?invite=" + inviteCode;
-  const androidIntent = "intent://join?invite=" + inviteCode + "#Intent;package=org.telegram.messenger;scheme=tg;end";
+  document.addEventListener("DOMContentLoaded", function() {
+    // Код вашей приватной ссылки
+    const inviteCode = "l6ZMtcXv8h4wNzg6"; 
+    const webFallbackUrl = "https://t.me/+" + inviteCode;
+    
+    // Системные протоколы для вызова приложения
+    const iosUrl = "tg://join?invite=" + inviteCode;
+    const androidIntent = "intent://join?invite=" + inviteCode + "#Intent;package=org.telegram.messenger;scheme=tg;end";
 
-  // Функция перенаправления
-  function executeRedirect() {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    // Находим все ссылки-кнопки на вашей странице
+    const allButtons = document.querySelectorAll('a');
 
-    // Используем window.location.replace, чтобы страница не сохранялась в кнопке "Назад"
-    if (/android/i.test(userAgent)) {
-      window.location.replace(androidIntent);
-    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      window.location.replace(iosUrl);
-    } else {
-      window.location.replace(webFallbackUrl);
-    }
+    allButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault(); // Останавливаем стандартный переход
+        
+        // Меняем текст, чтобы пользователь понимал, что процесс пошел
+        const originalText = this.innerHTML;
+        this.innerHTML = "<span>Открываем...</span>";
 
-    // Если через 1.5 секунды приложение не открылось (например, нет на телефоне), 
-    // кидаем на стандартную ссылку браузера
-    setTimeout(function() {
-      window.location.href = webFallbackUrl;
-    }, 1500);
-  }
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-  // Запускаем немедленно, как только скрипт загружен браузером
-  executeRedirect();
+        // Пытаемся пробить браузер ТикТока через системные схемы
+        if (/android/i.test(userAgent)) {
+          window.location.href = androidIntent;
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location.href = iosUrl;
+        } else {
+          window.location.href = webFallbackUrl;
+        }
+
+        // Если через 2 секунды Telegram не открылся (например, его нет на телефоне)
+        // Принудительно открываем обычную ссылку в браузере
+        setTimeout(() => {
+          window.location.href = webFallbackUrl;
+          this.innerHTML = originalText; // Возвращаем текст кнопки обратно
+        }, 2000);
+      });
+    });
+  });
 </script>
 
 </body>
